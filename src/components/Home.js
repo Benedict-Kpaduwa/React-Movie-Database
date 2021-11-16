@@ -8,16 +8,18 @@ import {POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL} from "../config";
 import HeroImage from "./HeroImage";
 import Grid from "./Grid";
 import Thumb from "./Thumb";
+import Spinner from "./Spinner";
 
 //Hooks
 import { useHomeFetch } from "../Hooks/useHomeFetch"
 
 //Image
 import NoImage from "../images/no_image.jpg";
+import SearchBar from "./SearchBar";
 
 const Home = () => {
     
-    const {state, loading, error} = useHomeFetch();
+    const {state, loading, error, setSearchTerm} = useHomeFetch();
 
     
     return (
@@ -28,6 +30,8 @@ const Home = () => {
                 text={state.results[0].overview}  // All this are all from the movie database API
             /> 
             : null}  
+
+            <SearchBar setSearchTerm={setSearchTerm}/>
 
             <Grid header="Popular Movies" >
                 {state?.results.map(movie => (
@@ -42,6 +46,7 @@ const Home = () => {
                     />
                 ))}
             </Grid>
+            <Spinner />
         </>
     )
     
