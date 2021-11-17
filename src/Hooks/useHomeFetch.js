@@ -37,7 +37,7 @@ export const useHomeFetch = () => {
 
     }
 
-    //Initial Render
+    //Initial an search
     useEffect(()=>{
         fetchMovies(1);
     }, [])
