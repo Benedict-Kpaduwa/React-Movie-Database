@@ -9,7 +9,8 @@ import HeroImage from "./HeroImage";
 import Grid from "./Grid";
 import Thumb from "./Thumb";
 import Spinner from "./Spinner";
-import Button from "./Button"
+import Button from "./Button";
+
 
 //Hooks
 import { useHomeFetch } from "../Hooks/useHomeFetch"
