@@ -15,7 +15,7 @@ export const useMovieFetch = movieId => {
                 setError(false);
 
                 const movie = await API.fetchMovie(movieId);
-                const credits = await API.fetchMovie(movieId);
+                const credits = await API.fetchCredits(movieId);
                 
                 //Get directors only
                 const directors = credits.crew.filter(
@@ -33,7 +33,7 @@ export const useMovieFetch = movieId => {
             } catch(error){
                 setError(true);
             }
-        }
+        };
 
         fetchMovie();
     }, [movieId]);
