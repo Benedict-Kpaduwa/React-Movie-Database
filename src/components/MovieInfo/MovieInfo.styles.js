@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { IMAGE_BASE_URL, BACKDROP_SIZE } from "../../config";
 
 export const Wrapper = styled.div`
-    background: ${({ backdrop}) =>
+    background: ${({backdrop}) =>
         backdrop ? `url("${IMAGE_BASE_URL}${BACKDROP_SIZE}${backdrop}")`
         : "#000"
     };
@@ -13,7 +13,7 @@ export const Wrapper = styled.div`
     padding: 40px 20px;
     animation: animateMovieInfo 1s;
 
-    @keyframes{
+    @keyframes animateMovieInfo{
         from{
             opacity: 0;
         }
@@ -29,7 +29,7 @@ export const Content = styled.div`
     max-width: var(--maxWidth);
     margin: 0 auto;
     background: rgba(0, 0, 0, 0.7);
-    border-raduis: 20px;
+    border-radius: 20px;
 
     @media screen and (max-width: 768px){
         display: block;
@@ -44,7 +44,7 @@ export const Text = styled.div`
     overflow: hidden;
 
     .rating-directors{
-        dispaly: flex;
+        display: flex;
         justify-content: flex-start;
     }
 
